@@ -2,7 +2,7 @@ from ursina import *
 from random import randint
 
 def update():
-    global score
+    global basket_dx, apple_dy, score
     basket.x = basket.x + held_keys['right arrow']*time.dt*basket_dx
     basket.x = basket.x - held_keys['left arrow']*time.dt*basket_dx
 
