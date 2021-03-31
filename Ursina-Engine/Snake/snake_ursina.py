@@ -6,7 +6,7 @@ class Player(Entity):
 
         super().__init__()
         self.parent = field
-        self.model='sphere'
+        self.model='cube'
         self.color = color.black
         self.scale = 0.05
         self.position = (0,0,-0.03)
@@ -31,7 +31,8 @@ class Player(Entity):
             apple.x = randint(-4,4)*0.1
             apple.y = randint(-4,4)*0.1
 
-            new_body = Entity(parent=field,model='sphere',color=color.green,scale=0.05)
+            new_body = Entity(parent=field,model='cube',z=-0.029, color=color.green,scale=0.05)
+
             body.append(new_body)
 
         # Move the end segments first in range
@@ -40,7 +41,8 @@ class Player(Entity):
 
         # First segment
         if len(body) > 0:
-            body[0].position=self.position
+            body[0].x=self.x
+            body[0].y=self.y
 
         # Boundary checking
         if abs(self.x) > 0.47 or abs(self.y) > 0.47:
@@ -79,6 +81,7 @@ field=Entity(model='quad',color=color.gray,scale=(12,12),
 
 apple = Entity(parent=field,model='sphere',color=color.red,scale=0.05,
       position=(0.1,0.1,-0.03),collider='box')
+
 
 player = Player()
 
