@@ -16,7 +16,7 @@ class Player(Entity):
         self.eaten = 0
 
     def update(self):
-        global body
+        global body, text
         self.x += time.dt * self.dx
         self.y += time.dt * self.dy
 
@@ -26,7 +26,8 @@ class Player(Entity):
 
             Audio('assets/apple_bite.wav')
             self.eaten += 1
-            print_on_screen(f"Apple eaten: {self.eaten}",position=(-0.45,-0.2),scale=1.5, duration=1)
+            text.y = -1
+            text = Text(text=f"Apple Eaten: {self.eaten}",position=(-0.45,-0.2),scale=1.5,color=color.yellow)
 
             apple.x = randint(-4,4)*0.1
             apple.y = randint(-4,4)*0.1
@@ -86,6 +87,7 @@ apple = Entity(parent=field,model='sphere',color=color.red,scale=0.05,
 player = Player()
 
 body=[]
+text = Text(text='')
 
 camera.position = (field_size // 2, -18, -18)
 camera.rotation_x = -56
