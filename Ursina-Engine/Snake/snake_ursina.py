@@ -27,7 +27,8 @@ class Player(Entity):
             Audio('assets/apple_bite.wav')
             self.eaten += 1
             text.y = -1
-            text = Text(text=f"Apple Eaten: {self.eaten}",position=(-0.45,-0.2),scale=1.5,color=color.yellow)
+            text = Text(text=f"Apple Eaten: {self.eaten}",position=(0,0.3),origin=(0,0),
+                        scale=1.5,color=color.yellow,background=True)
 
             apple.x = randint(-4,4)*0.1
             apple.y = randint(-4,4)*0.1
