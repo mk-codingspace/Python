@@ -14,7 +14,6 @@ def update():
 
         if sqrt(fireball.x **2 + fireball.y ** 2) < 0.7:
             Entity(model='quad', scale=60, color=color.gray)
-            player.z = 10
             Text(text='You lost! Reload the game!',origin=(0,0),scale=2,color=color.yellow,background=True)
 
 
@@ -30,7 +29,7 @@ def update():
             bullet.z = 1
 
             score += 1
-            text.z = 1
+            text.x = 10
             text=Text(text=f"Score: {score}",position=(-0.65,0.4),origin=(0,0),scale=2,color=color.yellow,background=True) 
 
             if hit_info.entity in fireballs:
