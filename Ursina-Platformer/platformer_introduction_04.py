@@ -76,15 +76,15 @@ for m in range(extension):
     duplicate(trap, x=-6+size*(m+1))
     duplicate(trap, x=-6-size*(m+1))
 
-    enemy = Enemy(2-1+size*(m-1),1)
+    enemy = Enemy(2-1+size*(m+1),1)
     enemies.append(enemy)
-    enemy = Enemy(2-1-size*(m-1),1)
+    enemy = Enemy(2-1-size*(m+1),1)
     enemies.append(enemy)
 
     
-    enemy = Enemy(-2.5-1+size*(m-1),2)
+    enemy = Enemy(-2.5-1+size*(m+1),2)
     enemies.append(enemy)
-    enemy = Enemy(-2.5-1-size*(m-1),2)
+    enemy = Enemy(-2.5-1-size*(m+1),2)
     enemies.append(enemy)
 
 # Camera
