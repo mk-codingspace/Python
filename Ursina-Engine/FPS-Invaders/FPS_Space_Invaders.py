@@ -50,7 +50,7 @@ def input(key):
                     m.z=-19            
 
 def new_bat():
-    global Bats
+    global Bats, run_bat
     new= Animation(
         'assets//bat',
         collider = 'box',
@@ -58,10 +58,11 @@ def new_bat():
         scale = (1.3,0.8),
         )
     Bats.append(new)
-    invoke(new_bat,delay = random.uniform(1,3))
+    if run_bat:
+        invoke(new_bat,delay = random.uniform(1,3))
     
 def new_monster():
-    global Monsters
+    global Monsters, run_monster
     new = Animation(
         'assets//tentakelding',
         collider = 'box',
@@ -69,7 +70,8 @@ def new_monster():
         scale = (1.3,0.8),
         )
     Monsters.append(new)
-    invoke(new_monster,delay = random.uniform(1,3))
+    if run_monster:
+        invoke(new_monster,delay = random.uniform(1,3))
 
 app=Ursina()
 Sky()
