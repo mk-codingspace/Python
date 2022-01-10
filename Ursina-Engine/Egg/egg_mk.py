@@ -61,7 +61,7 @@ def reset():
     global run,t
     t = 0
     run = True
-    egg.x = random.randint(-2,3)
+    egg.x = random.uniform(-2,3)
     egg.texture = 'assets/egg.png'
     
     bar_1.x = -3
@@ -89,7 +89,7 @@ bar_1 = Entity(model='quad',color=color.green,scale=(0.2,0),
 bar_2 = duplicate(bar_1,y=3,origin=(-0.5,0.5),
                 scale_y = maxscale-bar_1.scale_y)
 egg = Entity(model='quad',texture='assets/egg.png', scale=(0.8,1),
-             position=(random.randint(-2,3),-2.4,-0.1))
+             position=(random.uniform(-2,3),-2.4,-0.1))
 emoji = Entity(model='quad',z=0.1)
 
 app.run()
